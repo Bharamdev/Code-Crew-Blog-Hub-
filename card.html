@@ -38,15 +38,20 @@
         }
 
         .blog-card {
-            background-color: black;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0px 6px 18px white;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-            max-width: 350px;
-            position: relative;
-        }
+    background-color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    max-width: 350px;
+    position: relative;
+    box-shadow: 0px 6px 18px white; /* Default shadow */
+}
+
+.blog-card:hover {
+    box-shadow: 0px 6px 30px white; /* Brighter shadow on hover */
+}
+
 
         .blog-card:hover {
             transform: translateY(-10px);
