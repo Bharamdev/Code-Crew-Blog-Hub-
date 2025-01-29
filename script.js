@@ -29,20 +29,27 @@ function locomotiveAnimation() {
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
 
-    // ✅ Fix anchor navigation issue
+    // ✅ Fix anchor navigation issue for internal links
     document.querySelectorAll("nav a").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                locoScroll.scrollTo(target);
+            const target = this.getAttribute("href");
+
+            // If the link is external (another HTML file), navigate normally
+            if (target.includes(".html")) {
+                window.location.href = target; // Redirect to new page
+            } else if (target.startsWith("#")) {
+                // If it's an internal link (like #contact), prevent default and scroll
+                e.preventDefault();
+                const section = document.querySelector(target);
+                if (section) {
+                    locoScroll.scrollTo(section);
+                }
             }
         });
     });
 }
 
 locomotiveAnimation();
-
 
 // ✅ Page 2 Hover Animation (Image Appear)
 function page2Animation() {
@@ -70,7 +77,6 @@ function page2Animation() {
 }
 
 page2Animation();
-
 
 // ✅ Page 3 Video Play Animation
 function page3VideoAnimation() {
@@ -100,7 +106,6 @@ function page3VideoAnimation() {
 
 page3VideoAnimation();
 
-
 // ✅ Page 6 Scroll Animations
 function page6Animations() {
     gsap.from("#btm6-part2 h4", {
@@ -117,7 +122,6 @@ function page6Animations() {
 }
 
 page6Animations();
-
 
 // ✅ Smooth Page Loading Animation
 function loadingAnimation() {
