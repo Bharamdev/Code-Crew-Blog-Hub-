@@ -29,7 +29,8 @@ nav{
 }
 
 nav a{
-    text-decoration: none;}
+    text-decoration: none;
+}
 .nav-part2{
     display: flex;
     gap: 2vw;
@@ -659,6 +660,7 @@ summary::marker{
 }
 
 .footer {
+    position: relative;
     background-color: black;
     color: #fff;
     padding: 40px 0 20px;
@@ -666,6 +668,7 @@ summary::marker{
 }
 
 .footer-container {
+    height: 500px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
