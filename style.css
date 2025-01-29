@@ -27,6 +27,9 @@ nav{
     justify-content: space-between;
     z-index: 10;
 }
+
+nav a{
+    text-decoration: none;}
 .nav-part2{
     display: flex;
     gap: 2vw;
