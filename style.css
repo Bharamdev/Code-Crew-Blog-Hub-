@@ -9,6 +9,12 @@ body,html{
     height: 100%;
     width: 100%;
 }
+.blog{
+    width: 7vw; 
+    height: 11vh;  
+    margin-top: -3vh;
+    
+}
 nav{
     position: fixed;
     display: flex;
@@ -741,3 +747,5 @@ summary::marker{
     color: #ccc;
     font-size: 14px;
 }
+
+
